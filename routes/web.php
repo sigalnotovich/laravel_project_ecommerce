@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContactController;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,20 +13,19 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/', function () {  //get fun retrive the home page of the app and return a view named welcome.blade.php!
-    return view('welcome'); //welcome.blade.php
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    $users = User::all(); //get all the sata from the user.php model
+    return view('dashboard',compact('users')); //pass all the data to the dashbord view
+})->middleware(['auth'])->name('dashboard');
+
+
+Route::get('/home', function () {
+    return view('home');
 });
 
 
-Route::get('/about' ,function (){
-    return view('about'); //about.blade.php
-//    echo "this is about page";
-})->middleware('check'); //use a middlware
-
-Route::get('/home' ,function (){
-    echo "this is home page";
-});
-
-
-//Route::get('/contact','/http/ContactController@index');//laravel7
-Route::get('/contact',[ContactController::class ,'index']);//laravel8
+require __DIR__.'/auth.php';
