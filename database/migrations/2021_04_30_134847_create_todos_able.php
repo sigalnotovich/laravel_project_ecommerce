@@ -13,8 +13,11 @@ class CreateTodosAble extends Migration
      */
     public function up()  //run migration
     {
-        Schema::create('todos_able', function (Blueprint $table) {
-            $table->id();
+        Schema::create('todos', function (Blueprint $table) {
+            $table->increments('id'); //auto increment every new line
+            $table->string('name');
+            $table->text('description');
+            $table->boolean('completed');
             $table->timestamps();
         });
     }
@@ -26,6 +29,7 @@ class CreateTodosAble extends Migration
      */
     public function down() //undo migration
     {
-        Schema::dropIfExists('todos_able');
+        Schema::dropIfExists('todos_list');
+        Schema::dropIfExists('todos');
     }
 }
