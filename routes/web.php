@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Customers;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 /*
@@ -18,10 +19,16 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    $users = User::all(); //get all the sata from the user.php model
-    return view('dashboard',compact('users')); //pass all the data to the dashbord view
+//    $users = User::all(); //get all the sata from the user.php model
+//    return view('dashboard',compact('users')); //pass all the data to the dashbord view
+//    $Customers = Customers::all();
+    return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/customers', function () {
+    $Customers = Customers::all();
+    return view('customers', compact('Customers'));
+});
 
 Route::get('/home', function () {
     return view('home');
