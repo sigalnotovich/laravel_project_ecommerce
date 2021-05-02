@@ -31,6 +31,7 @@ Route::get('/customers', function () {
     return view('customers', compact('Customers'));
 });
 
+
 //Route::get('/customer', function () {
 //    return view('customers');
 //});
@@ -40,9 +41,13 @@ Route::get('/home', function () {
 });
 
 //category Controller
-//Route::get('/category/all',[CategoryController::class,'AllCat'])->name('all.category');
-Route::get('/category/all',function (){
-   return view('admin.category.index');
-});
+Route::get('/category/all',[CategoryController::class,'AllCat'])->name('all.category');
+//Route::get('/category/all',function (){
+//   return view('admin.category.index');
+//});
+
+Route::post('/category/add',[CategoryController::class,"AddCat"])->name('store.category');
+
+
 
 require __DIR__.'/auth.php';
