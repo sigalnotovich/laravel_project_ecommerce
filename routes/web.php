@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Models\Customers;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
@@ -30,9 +31,18 @@ Route::get('/customers', function () {
     return view('customers', compact('Customers'));
 });
 
+//Route::get('/customer', function () {
+//    return view('customers');
+//});
+
 Route::get('/home', function () {
     return view('home');
 });
 
+//category Controller
+//Route::get('/category/all',[CategoryController::class,'AllCat'])->name('all.category');
+Route::get('/category/all',function (){
+   return view('admin.category.index');
+});
 
 require __DIR__.'/auth.php';
