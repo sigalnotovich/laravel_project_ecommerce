@@ -23,7 +23,8 @@
                                            class="form-control" id="UpdateCategoryName"
                                            aria-describedby="UpdateCategoryName"
                                            value="{{$categories->category_name}}">
-{{--                                    @error('category_name')--}}
+{{--                                    todo:--}}
+{{--                                    @error('Update_category_name')--}}
 {{--                                    <span class="text-red-800">{{$message}}</span>--}}
 {{--                                    @enderror--}}
                                 </div>
