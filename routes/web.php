@@ -53,5 +53,7 @@ Route::get('category/edit{id}',[CategoryController::class,'Edit']);
 
 Route::post('/category/update/{id}',[CategoryController::class, 'Update'])->name('category/update/{id}');
 
+Route::get('category/delete/{id}',[CategoryController::class, 'Delete']);
+
 require __DIR__.'/auth.php';
 

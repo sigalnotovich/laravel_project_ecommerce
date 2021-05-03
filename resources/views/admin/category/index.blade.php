@@ -43,7 +43,9 @@
 {{--                            <td>{{$Customer->created_at->diffForHumans()}}</td>--}}
                                 <td>
                                     <a href="{{url('category/edit').$category->id }}" class="btn btn-primary">Edit</a>
-                                    <a href="" class="btn btn-danger">Delete</a>
+
+                                    <a href="{{url('category/delete/'.$category->id)}}" class="btn btn-danger">Delete</a>
+
                                 </td>
                             </tr>
                         @endforeach
