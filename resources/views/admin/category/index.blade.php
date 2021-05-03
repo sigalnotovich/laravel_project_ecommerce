@@ -28,8 +28,9 @@
                         <tr>
                             <th scope="col">SL No</th>
                             <th scope="col">Category</th>
-{{--                            <th scope="col">Email</th>--}}
-{{--                            <th scope="col">Created At</th>--}}
+{{--                        <th scope="col">Email</th>--}}
+{{--                        <th scope="col">Created At</th>--}}
+                            <th scope="col">Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -38,8 +39,12 @@
                             <tr>
                                 <th scope="row">{{$category->id}}</th>
                                 <td>{{$category->category_name}}</td>
-{{--                                <td>{{$Customer->email}}</td>--}}
-{{--                                <td>{{$Customer->created_at->diffForHumans()}}</td>--}}
+{{--                            <td>{{$Customer->email}}</td>--}}
+{{--                            <td>{{$Customer->created_at->diffForHumans()}}</td>--}}
+                                <td>
+                                    <a href="{{url('category/edit').$category->id }}" class="btn btn-primary">Edit</a>
+                                    <a href="" class="btn btn-danger">Delete</a>
+                                </td>
                             </tr>
                         @endforeach
 

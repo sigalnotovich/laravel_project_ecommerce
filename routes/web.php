@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoryController;
 use App\Models\Customers;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +49,9 @@ Route::get('/category/all',[CategoryController::class,'AllCat'])->name('all.cate
 
 Route::post('/category/add',[CategoryController::class,"AddCat"])->name('store.category');
 
+Route::get('category/edit{id}',[CategoryController::class,'Edit']);
 
+Route::post('/category/update/{id}',[CategoryController::class, 'Update'])->name('category/update/{id}');
 
 require __DIR__.'/auth.php';
+
