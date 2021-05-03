@@ -21,7 +21,7 @@
                                 </div>
                             @endif
 
-                            <div class="card-header">All Category</div>
+                            <div class="card-header">All Categories</div>
 
                     <table class="table">
                         <thead>

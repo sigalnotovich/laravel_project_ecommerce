@@ -1,18 +1,4 @@
-{{--<!DOCTYPE html>--}}
-{{--    <div class = "content">--}}
-{{--    <div class = "title">--}}
-{{--        <h2>HOME PAGE</h2>--}}
-{{--        <a href="about">ABOUT</a>|--}}
-{{--        <a href="/contact">CONTACT</a>--}}
-{{--        <h2>         </h2>|--}}
-{{--        <a href="/dashboard">LOGIN</a>|--}}
-{{--        <a href="/register">REGISTER</a>--}}
-{{--    </div>--}}
-
-{{--    </div>--}}
-{{--</html>--}}
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -90,15 +76,9 @@
             SHOP
         </div>
 
-        <div class="links">
-{{--            <a href="https://laravel.com/docs">Documentation</a>--}}
-{{--            <a href="https://laracasts.com">Laracasts</a>--}}
-{{--            <a href="https://codecasts.com.br">CODECASTS [pt-BR]</a>--}}
-{{--            <a href="https://laravel-news.com">News</a>--}}
-{{--            <a href="https://forge.laravel.com">Forge</a>--}}
-{{--            <a href="https://github.com/codecasts/laravel">GitHub</a>--}}
-        </div>
     </div>
 </div>
 </body>
+
+@yield('page')
 </html>

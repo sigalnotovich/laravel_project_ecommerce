@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\ProductsController;
 use App\Models\Customers;
 use Illuminate\Support\Facades\Auth;
@@ -18,9 +19,17 @@ use App\Models\User;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/', function () {
+//    return view('index');
+//});
+Route::get('/',[FrontEndController::class,'index']);
+
+//Route::get('/logout',[FrontEndController::class,'index']);
+
+Route::get('/logout',function(){
+    return view('index');
 });
+
 
 Route::get('/dashboard', function () {
 //    $users = User::all(); //get all the sata from the user.php model
