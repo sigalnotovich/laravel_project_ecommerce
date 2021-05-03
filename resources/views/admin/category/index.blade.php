@@ -30,7 +30,7 @@
                             <th scope="col">Category</th>
 {{--                        <th scope="col">Email</th>--}}
 {{--                        <th scope="col">Created At</th>--}}
-                            <th scope="col">Action</th>
+                            <th scope="col">Edit &nbsp; &nbsp; &nbsp; Delete</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -42,7 +42,7 @@
 {{--                            <td>{{$Customer->email}}</td>--}}
 {{--                            <td>{{$Customer->created_at->diffForHumans()}}</td>--}}
                                 <td>
-                                    <a href="{{url('category/edit').$category->id }}" class="btn btn-primary">Edit</a>
+                                    <a href="{{url('category/edit').$category->id }}" class="btn btn-outline-secondary">Edit</a>
 
                                     <a href="{{url('category/delete/'.$category->id)}}" class="btn btn-danger">Delete</a>
 

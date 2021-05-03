@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductsController;
 use App\Models\Customers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 
@@ -54,6 +56,20 @@ Route::get('category/edit{id}',[CategoryController::class,'Edit']);
 Route::post('/category/update/{id}',[CategoryController::class, 'Update'])->name('category/update/{id}');
 
 Route::get('category/delete/{id}',[CategoryController::class, 'Delete']);
+
+Route::resource('products','ProductsController');
+
+//todo: Auth::routes();
+
+Route::get('/Products/all',[\App\Http\Controllers\ProductsController::class,'AllProd'])->name('all.Products');
+
+Route::get('Products/edit{id}',[ProductsController::class,'Edit']);
+
+Route::post('/Products/add',[ProductsController::class,"AddProd"])->name('store.Product');
+
+Route::post('/Products/update/{id}',[ProductsController::class, 'Update']);
+
+Route::get('Products/delete/{id}',[ProductsController::class, 'Delete']);
 
 require __DIR__.'/auth.php';
 

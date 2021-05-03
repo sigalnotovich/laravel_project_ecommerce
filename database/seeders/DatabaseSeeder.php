@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
     {
 
         $this->call(CustomersSeeder::class); // will call the run method in the ToDoSeeder class
+        $this->call(productTableSeeder::class);
     }
 }
